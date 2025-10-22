@@ -7,16 +7,19 @@
     "install-server": "npm install --prefix server",
     "install-client": "npm install --prefix client",
     "install": "npm run install-server && npm run install-client",
-    "server":"npm run watch --prefix server",
-    "client":"npm start --prefix client",
+    "server": "npm run watch --prefix server",
+    "client": "npm start --prefix client",
     "watch": "concurrently \"npm run server\" \"npm run client\"",
-    "deploy":"npm run build --prefix client && npm start --prefix server",
-    "test": "npm run test --prefix server && npm run test --prefix client"
+    "deploy": "npm run build --prefix client && npm start --prefix server",
+    "test": "npm test --prefix server && npm test --prefix client"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^9.2.1"
+  },
+  "dependencies": {
+    "morgan": "^1.10.1"
   }
 }
